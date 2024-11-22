@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD 3.0//En"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="hib.dto">
+    <class name="College" table="college1info">
+        <id name="regNo" column="registrationno"/>
+        <property name="collegeName" column="collegename"/>
+        <property name="services" column="services"/>
+        <joined-subclass name="Student" table="student1info">
+            <key column="registrationno"/>
+            <property name="rollNo" column="rollno"/>
+            <property name="studentName" column="studentname"/>
+        </joined-subclass>
+    </class>
+</hibernate-mapping>
+
+  
